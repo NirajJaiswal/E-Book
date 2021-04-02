@@ -13,7 +13,7 @@ import java.util.Objects;
 import static androidx.room.ForeignKey.CASCADE;
 
 
-@Entity(tableName = "books_table",foreignKeys = @ForeignKey(entity = Category.class,
+@Entity(tableName = TablesName.BookTableName,foreignKeys = @ForeignKey(entity = Category.class,
 parentColumns = "id",childColumns = "category_id",onDelete = CASCADE))
 public class Book extends BaseObservable
 {
