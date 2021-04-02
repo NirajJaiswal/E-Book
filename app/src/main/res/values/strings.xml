@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">E-Book</string>
+    <string name="floating_button">floatingButton</string>
+    <string name="book_name">Book Name</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="submit">Submit</string>
 </resources>

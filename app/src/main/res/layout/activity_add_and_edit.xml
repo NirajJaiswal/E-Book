@@ -25,11 +25,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Book Name"
+            android:text="@string/book_name"
             android:id="@+id/tv_book_name_edit"
             android:layout_margin="10dp"
             android:textSize="20sp"
-
+            android:textColor="@color/black"
             />
         <EditText
             android:layout_width="match_parent"
@@ -38,15 +38,17 @@
             android:layout_below="@+id/tv_book_name_edit"
             android:layout_margin="5dp"
             android:text="@={book.bookName}"
+            android:maxLines="1"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Unit Price"
+            android:text="@string/unit_price"
             android:id="@+id/tv_unit_price"
             android:layout_below="@id/et_book_name"
             android:textSize="20sp"
             android:layout_margin="10dp"
+            android:textColor="@color/black"
             />
         <EditText
             android:layout_width="match_parent"
@@ -64,7 +66,7 @@
             android:id="@+id/bt_submit"
             android:onClick="@{clickHandler::onSubmitButtonClicked}"
             android:layout_gravity="center"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textSize="20sp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

@@ -12,10 +12,11 @@
     <androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="2dp"
+        app:cardCornerRadius="5dp"
         android:layout_margin="10dp"
         android:elevation="1dp"
-        app:cardElevation="2dp">
+        app:cardElevation="2dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
