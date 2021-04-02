@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_delete) {
             return true;
         }
 

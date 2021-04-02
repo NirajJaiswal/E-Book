@@ -21,9 +21,9 @@ public interface BookDao
     @Update
     void update(Book book);
 
-    @Query("SELECT * FROM books_table")
+    @Query("SELECT * FROM "+TablesName.BookTableName)
     LiveData<List<Book>>getAllBooks();
 
-    @Query("SELECT * from books_table WHERE category_id==:categoryId")
+    @Query("SELECT * from "+TablesName.BookTableName+ " WHERE category_id==:categoryId ")
     LiveData<List<Book>>getBooks(int categoryId);
 }

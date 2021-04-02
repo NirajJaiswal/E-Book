@@ -21,6 +21,7 @@ public class AddAndEditActivity extends AppCompatActivity {
     public static final String UNIT_PRICE="unitPrice";
     private ActivityAddAndEditBinding activityAddAndEditBinding;
     private AddAndEditActivityClickHandlers addAndEditActivityClickHandlers;
+    private Intent mIntent;
 
 
     @Override
@@ -34,14 +35,12 @@ public class AddAndEditActivity extends AppCompatActivity {
 
         addAndEditActivityClickHandlers = new AddAndEditActivityClickHandlers(this);
         activityAddAndEditBinding.setClickHandler(addAndEditActivityClickHandlers);
-
-        Intent intent=getIntent();
-        if(intent.hasExtra(BOOK_ID)){
-            Log.i("BookIdTest"," at 3 id is "+intent.getIntExtra(BOOK_ID,0));
+        mIntent=getIntent();
+        if(mIntent.hasExtra(BOOK_ID)){
+            Log.i("BookIdTest"," at 3 id is "+mIntent.getIntExtra(BOOK_ID,0));
             setTitle("Edit Book");
-
-            book.setBookName(intent.getStringExtra(BOOK_NAME));
-            book.setUnitPrice(intent.getStringExtra(UNIT_PRICE));
+            book.setBookName(mIntent.getStringExtra(BOOK_NAME));
+            book.setUnitPrice(mIntent.getStringExtra(UNIT_PRICE));
 
 
         }else{
@@ -62,13 +61,25 @@ public class AddAndEditActivity extends AppCompatActivity {
         public void onSubmitButtonClicked(View view){
             if(book.getBookName()==null){
                 Toast.makeText(context,"Name field cannot be empty",Toast.LENGTH_LONG).show();
-            }else{
-                Intent intent=new Intent();
-                intent.putExtra(BOOK_NAME,book.getBookName());
-                intent.putExtra(UNIT_PRICE,book.getUnitPrice());
-                Log.i("BookIdTest",book.toString());
-                setResult(RESULT_OK,intent);
+            } else if (book.getUnitPrice() == null)
+            {
+                Toast.makeText(context,"Price field cannot be empty",Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent();
+                intent.putExtra(BOOK_NAME, book.getBookName());
+                intent.putExtra(UNIT_PRICE, book.getUnitPrice());
+                Log.i("BookIdTest", book.toString());
+                setResult(RESULT_OK, intent);
                 finish();
+                if(mIntent.hasExtra(BOOK_ID))
+                {
+                    Toast.makeText(context,"Successfully Updated",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(context,"Successfully entered",Toast.LENGTH_LONG).show();
+                }
+
             }
 
 

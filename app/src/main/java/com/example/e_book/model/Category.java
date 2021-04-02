@@ -5,10 +5,9 @@ import androidx.databinding.Bindable;
 import androidx.databinding.library.baseAdapters.BR;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "categories_table")
+@Entity(tableName = TablesName.CategoryTable)
 public class Category extends BaseObservable
 {
     @PrimaryKey(autoGenerate = true)
