@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.example.e_book.AddAndEditActivity.AddAndEditActivityClickHandlers" />
+        <variable
+            name="book"
+            type="com.example.e_book.model.Book" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddAndEditActivity"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Name"
+            android:id="@+id/tv_book_name_edit"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_book_name"
+            android:layout_below="@+id/tv_book_name_edit"
+            android:layout_margin="5dp"
+            android:text="@={book.bookName}"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unit Price"
+            android:id="@+id/tv_unit_price"
+            android:layout_below="@id/et_book_name"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_unit_price"
+            android:layout_below="@+id/tv_unit_price"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:text="@={book.unitPrice}"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_submit"
+            android:onClick="@{clickHandler::onSubmitButtonClicked}"
+            android:layout_gravity="center"
+            android:text="Submit"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/black"
+            android:textAllCaps="false"
+
+            />
+
+    </RelativeLayout>
+
+</layout>
