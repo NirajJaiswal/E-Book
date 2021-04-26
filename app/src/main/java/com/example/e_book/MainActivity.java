@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_delete) {
+            Toast.makeText(this, "Delete All is not implemented", Toast.LENGTH_SHORT).show();
             return true;
         }
 
